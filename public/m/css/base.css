@@ -1,0 +1,40 @@
+/* 公共样式 */
+.my-header {
+	background: #006699;
+}
+
+.my-header h1 {
+	color: #FFF;
+}
+
+.my-header .mui-icon-search {
+	color: #FFF;
+}
+
+.my-footer {
+	background: #006699;
+}
+
+.my-footer .mui-tab-item {
+	color: #FFF;
+}
+
+.my-footer .mui-tab-item.mui-active {
+	color: darkorange;
+}
+body {
+	background-color: #fff;
+}
+button {
+	border: none;
+	outline: none;
+}
+ul,p {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  color: #000;
+}
