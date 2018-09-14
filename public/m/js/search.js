@@ -11,7 +11,7 @@ $(function(){
              keywords.unshift(keyword);
              localStorage.setItem('keywords',JSON.stringify(keywords));
         } else {
-            localStorage.setItem('keywords',keyword)
+            localStorage.setItem('keywords',JSON.stringify([keyword]));
         }
         location.href = "search-list.html?key=" + keyword;
     });
@@ -20,5 +20,12 @@ $(function(){
         var html = template('historySearchTpl', {data: keywords});
         $('#historySearch').html(html);
     }
-    
+    $('#clearHistory').on('tap',function(){
+        localStorage.removeItem('keywords');
+        $('#historySearch').html("");
+    });
+    $('#historySearch').on('tap','li',function(){
+        var keyword = $(this).text();
+        location.href = "search-list.html?key="+ keyword;
+    });
 });
