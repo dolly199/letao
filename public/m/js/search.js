@@ -13,7 +13,7 @@ $(function(){
         } else {
             localStorage.setItem('keywords',JSON.stringify([keyword]));
         }
-        location.href = "search-list.html?key=" + keyword;
+        location.href = "search-list.html?keyword=" + keyword;
     });
     if(localStorage.getItem('keywords')) {
         var keywords = JSON.parse(localStorage.getItem('keywords'));
@@ -26,6 +26,6 @@ $(function(){
     });
     $('#historySearch').on('tap','li',function(){
         var keyword = $(this).text();
-        location.href = "search-list.html?key="+ keyword;
+        location.href = "search-list.html?keyword="+ keyword;
     });
 });
