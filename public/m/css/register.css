@@ -1,12 +1,3 @@
-.mui-content {
-    background-color: #fff;
-}
-.mui-input-group .mui-input-row:after {
-    left: 0;
-}
-.mui-input-row label,.mui-input-row label~input {
-    font-size: 14px;
-}
 #getCode {
     color: #006699;
     font-size: 12px;

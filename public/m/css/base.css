@@ -102,3 +102,15 @@ a {
 	display:block;
 	margin-bottom:10px;
 }
+.mui-content {
+	background-color: #fff;
+}
+.mui-input-group .mui-input-row:after,
+.mui-table-view-cell:after {
+    left: 0;
+}
+.mui-input-row label,
+.mui-input-row label~input,
+.mui-table-view-cell>a:not(.mui-btn) {
+    font-size: 14px;
+}
