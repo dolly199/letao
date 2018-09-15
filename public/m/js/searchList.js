@@ -1,6 +1,8 @@
 var keyword = getParamsByUrl(location.href, 'keyword');
 var page = 1;
 var html = "";
+var priceSort = 1;
+var that = null;
 $(function () {
     mui.init({
         pullRefresh : {
@@ -14,10 +16,19 @@ $(function () {
           }
         }
       });
-
+        $('#priceSort').on('tap', function() {
+            
+            priceSort = (priceSort == 1 ? 2 : 1);
+            html = "";
+            page = 1;
+            mui('#refreshContainer').pullRefresh().refresh(true);
+            getData();
+        });
     })
     function getData() {
-        var that = this;
+        if(!that) {
+            that = this;
+        }
         $.ajax({
             url: '/product/queryProduct',
             type: 'get',
@@ -25,9 +36,9 @@ $(function () {
                 page: page++,
                 pageSize: 3,
                 proName: keyword,
+                price: priceSort
             },
             success: function (result) {
-                console.log(result);
                 if(result.data.length > 0) {
                     html += template('searchTpl', result);
                     $('#searchBox').html(html);

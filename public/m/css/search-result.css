@@ -1,0 +1,14 @@
+.search-bar {
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    text-align: center;
+    background-color: #efeff4;
+}
+#refreshContainer {
+    position: absolute;
+    left: 0;
+    top: 44px;
+    bottom: 50px;
+    width: 100%;
+}

@@ -3,12 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>搜索结果</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="assets/mui/css/mui.min.css">
     <link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/search-result.css">
     <script src="assets/mui/js/mui.min.js"></script>
     <script src="assets/zepto/zepto.min.js"></script>
     <script src="js/common.js"></script>
@@ -39,26 +39,24 @@
             <span class="mui-tab-label">会员中心</span>
         </a>
     </nav>
-    <div id="refresh">
-        <div class="container" id="refreshContainer">
-            <div>
-                <div class="mui-row">
-                    <div class="mui-col-xs-6 search-bar" id="priceSort">
-                        价格&nbsp;<span class="fa fa-angle-down"></span>
+        <div id="refreshContainer">
+                <div>
+                    <div class="mui-row">
+                        <div class="mui-col-xs-6 search-bar" id="priceSort">
+                            价格&nbsp;<span class="fa fa-angle-down"></span>
+                        </div>
+                        <div class="mui-col-xs-6 search-bar" id="numSort">
+                            销量&nbsp;<span class="fa fa-angle-down"></span>
+                        </div>
                     </div>
-                    <div class="mui-col-xs-6 search-bar" id="numSort">
-                        销量&nbsp;<span class="fa fa-angle-down"></span>
+        
+                    <div class="product">
+                        <ul class="list mui-clearfix" id="searchBox">
+        
+                        </ul>
                     </div>
-                </div>
-    
-                <div class="product">
-                    <ul class="list mui-clearfix" id="searchBox">
-    
-                    </ul>
-                </div>
             </div>
         </div>
-    </div>
     <script type="text/html" id="searchTpl">
         {{each data }}
             <li>
