@@ -26,6 +26,9 @@ $(function(){
                     setTimeout(function(){
                         location.href = "user.html";
                     },1000);
+                } else {
+                    mui.toast('登录失败,请确认账号密码是否正确!');
+                    $('#loginBtn').html('登录');
                 }
             } 
         });
