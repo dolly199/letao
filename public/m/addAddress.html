@@ -3,23 +3,36 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>搜索结果</title>
+    <title>添加收货地址</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="assets/mui/css/mui.min.css">
     <link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/search-result.css">
+    <link rel="stylesheet" href="assets/mui/css/mui.picker.css">
+    <link rel="stylesheet" href="assets/mui/css/mui.poppicker.css">
     <script src="assets/mui/js/mui.min.js"></script>
+    <script src="assets/mui/js/mui.picker.js"></script>
+    <script src="assets/mui/js/mui.poppicker.js"></script>
     <script src="assets/zepto/zepto.min.js"></script>
     <script src="assets/artTemplate/template-web.js"></script>
     <script src="js/common.js"></script>
-    <script src="js/searchList.js"></script>
+    <script src="js/city.js"></script>
+    <script src="js/addAddress.js"></script>
+    <style>
+        .mui-content>.mui-table-view:first-child {
+            margin-top: 0;
+        }
+        #addAddress {
+            display: block;
+            line-height: 40px;
+        }
+    </style>
 </head>
 
 <body>
     <header class="mui-bar mui-bar-nav my-header">
         <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-        <h1 class="mui-title">搜索中心</h1>
+        <h1 class="mui-title">添加收货地址</h1>
     </header>
     <nav class="mui-bar mui-bar-tab my-footer">
         <a class="mui-tab-item " href="index.html">
@@ -34,44 +47,30 @@
             <span class="mui-icon fa fa-shopping-cart"></span>
             <span class="mui-tab-label">购物车</span>
         </a>
-        <a class="mui-tab-item" href="user.html">
+        <a class="mui-tab-item mui-active" href="user.html">
             <span class="mui-icon mui-icon-person"></span>
             <span class="mui-tab-label">会员中心</span>
         </a>
     </nav>
-    <div id="refreshContainer">
-        <div>
-            <div class="mui-row">
-                <div class="mui-col-xs-6 search-bar" id="priceSort">
-                    价格&nbsp;<span class="fa fa-angle-down"></span>
-                </div>
-                <div class="mui-col-xs-6 search-bar" id="numSort">
-                    销量&nbsp;<span class="fa fa-angle-down"></span>
-                </div>
+    <div class="mui-content">
+        <div class="mui-input-group">
+            <div class="mui-input-row">
+                <input class="mui-input-clear" type="text" placeholder="收货人姓名" name="recipients">
             </div>
-
-            <div class="product">
-                <ul class="list mui-clearfix" id="searchBox">
-
-                </ul>
+            <div class="mui-input-row">
+                <input class="mui-input-clear" type="text" placeholder="邮编" name="postcode">
+            </div>
+            <div class="mui-input-row">
+                <input class="mui-input-clear" type="text" placeholder="省市区" readonly id="city" name="address">
+            </div>
+            <div class="mui-input-row">
+                <input class="mui-input-clear" type="text" placeholder="详细地址" name="addressDetail">
+            </div>
+            <div class="mui-input-row">
+                <span class="mui-text-center" id="addAddress">确认</span>
             </div>
         </div>
     </div>
-    <script type="text/html" id="searchTpl">
-        {{each data }}
-            <li>
-                <a href="javascript:;">
-                    <img src="{{$value.pic[0].picAddr}}">
-                    <p class="name">{{$value.proName}}</p>
-                    <p>
-                        <span>￥{{$value.price}}</span>
-                        <span>￥{{$value.oldPrice}}</span>
-                    </p>
-                    <button class="buy-now">立即购买</button>
-                </a>
-            </li>
-        {{/each}}
-    </script>
 </body>
 
 </html>
