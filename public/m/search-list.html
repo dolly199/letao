@@ -58,9 +58,9 @@
         </div>
     </div>
     <script type="text/html" id="searchTpl">
-        {{each data }}
+        {{each data}}
             <li>
-                <a href="javascript:;">
+                <a href="detail.html?id={{$value.id}}">
                     <img src="{{$value.pic[0].picAddr}}">
                     <p class="name">{{$value.proName}}</p>
                     <p>
