@@ -71,7 +71,7 @@
 	            </nav>
 	        </div>
 	        <div class="body">
-	        	<button class="operation btn btn-primary" data-toggle="modal" data-target=".category-first">添加分类</button>
+	        	<button class="operation btn btn-primary" data-toggle="modal" data-target=".category-first" id="model">添加分类</button>
 	        	<table class="table table-bordered">
 					<thead>
 						<tr>
@@ -101,12 +101,12 @@
 				</div>
 				<div class="modal-body">
 					<div class="form-group">
-						<input type="text" class="form-control" placeholder="请输入分类的名称">
+						<input type="text" class="form-control" placeholder="请输入分类的名称" id="categoryName">
 					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-					<button type="button" class="btn btn-primary">保存</button>
+					<button type="button" class="btn btn-primary" id="addCategory">保存</button>
 				</div>
 			</div>
 		</div>

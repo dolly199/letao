@@ -32,4 +32,23 @@ $(function(){
             }
         });
     }
+    $('#addCategory').on('click',function(){
+        var categoryName = $('#categoryName').val()
+        if(!categoryName) {
+            return alert("请输入分类名称")
+        }
+        $.ajax({
+            url: '/category/addTopCategory',
+            type: 'post',
+            data: {
+                categoryName: categoryName
+            },
+            success: function(res) {
+                if(res.success) {
+                    $('#modal').modal('hide')
+                    location.reload();
+                }
+            }
+        });
+    });
 });
