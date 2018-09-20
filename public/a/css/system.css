@@ -155,3 +155,6 @@ html,
 .main .body .show{
 	padding-top:15px;
 }
+.brand-logo {
+    max-height: 85px;
+}
